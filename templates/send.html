@@ -7,16 +7,24 @@
     <title>소스코드 제출</title>
 </head>
 <body>
-  <form action="/send" method="post">
-        <select name="lang">
-            <option value="C">C</option>
-            <option value="Python">Python</option>
-            <option value="Javascript">Javascript</option>
-        </select>
-        <br>
-        <textarea name="code" rows="15" cols="35"></textarea>
-        <br>
-        <input type="submit">
-    </form>
+    <h1 style="display: flex; justify-content: center;">소스코드 제출</h1>
+    <hr>
+    <br>
+    <div style="display: flex; justify-content: center;">
+        <form action="/send" method="post">
+        <span>
+            Select Langa : 
+            <select name="lang" style="margin-bottom: 30px;">
+                <option value="C">C</option>
+                <option value="Python">Python</option>
+                <option value="Javascript">Javascript</option>
+                </select>
+                <input type="submit" style="margin-left: 38%; width: 60px; height: 30px;">
+        </span>
+            <br>
+            <textarea name="code" rows="25" cols="50" style="margin-bottom: 30px;"></textarea>
+            <br>
+        </form>
+    </div>
 </body>
 </html>
