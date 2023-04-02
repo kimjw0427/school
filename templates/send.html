@@ -14,8 +14,31 @@
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <h1 style="display: flex; justify-content: center; margin:20px;">소스코드 제출</h1>
-    <hr>
+    <nav class="shadow navbar navbar-expand-lg navbar navbar-dark bg-dark" style="padding: 5px;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="margin-left: 22.5%;"><img src="logo.png" alt="Logo" width="50" height="50" ><b>과학과제연구</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="margin-left: 20px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">문제목록</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">채점 현황</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">랭킹</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">게시판</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <h1 style="display: flex; justify-content: center; margin:20px;"><b>소스코드 제출</b></h1>
     <div style="display: flex; justify-content: center;">
         <form action="/send" method="post">
         <span>
@@ -27,10 +50,11 @@
                 </select>
         </span>
             <br>
-            <textarea name="code" rows="20" cols="45" style="margin-bottom: 15px; font-size: 20px;"></textarea>
+            <textarea class="form-control" name="code" rows="10" cols="45" style="font-size: 20px;"></textarea>
             <br>
             <input class="btn btn-primary shadow-sm border" type="submit" value="제출하기" style="display: block; margin: auto; text-align: center;">
         </form>
     </div>
+    <hr style="margin-top: 25px;">
 </body>
 </html>
