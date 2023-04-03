@@ -1,5 +1,7 @@
 from flask import *
-import time, random
+from challenge import chall_list
+import time, random, os
+import challengeFolder
 
 app = Flask(__name__)
 
@@ -9,19 +11,42 @@ tmp_path = "/tmp/"
 def index():
     return render_template("/index.html")
 
+@app.route("/challenge", methods=['GET'])
+def challenge():
+    chall_num = request.args.get("n")
+    if chall_num in chall_list:
+        return render_template("/challenge.html",chall=chall_list[chall_num])
+    else:
+        return "404"
 
 @app.route("/send", methods=['GET','POST'])
 def send():
     if request.method == 'GET':
-        return render_template("/send.html")
+        chall_num = request.args.get("n")
+        return render_template("/send.html",chall_num=chall_num)
     else:
         lang = request.form.get("lang")
         code = request.form.get("code")
+        chall_num = request.form.get("n")
+        if not chall_num in chall_list:
+            return "404"
+        
         codeFilename = tmp_path + str(time.time()) + str(random.randint(10**10,10**11))
         if lang == "Python":
             codeFilename = codeFilename + ".py"
             f = open(codeFilename,"w+")
             f.write(code)
+            print(f"[+] create : {codeFilename}")
+            try:
+                print("[+] TRY")
+                test()
+            except:
+                print("[+] ERROR")            
+
+            os.system("rm " + codeFilename)
+            print(f"[+] delete : {codeFilename}")
+        else:
+            return "프로그래밍 언어를 선택해주세요."
             
         return render_template("/send.html")
 

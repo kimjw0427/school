@@ -19,8 +19,6 @@ def start_challenge(target_file):
     else:
         return 0
     
-def test():
-    print("abcd")
 
 if start_challenge(["python3","test.py"]):
     print("성공")
