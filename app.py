@@ -1,7 +1,7 @@
 from flask import *
 from challenge import chall_list
 import time, random, os
-import challengeFolder
+from challengeFolder import add
 
 app = Flask(__name__)
 
@@ -38,8 +38,13 @@ def send():
             f.write(code)
             print(f"[+] create : {codeFilename}")
             try:
-                print("[+] TRY")
-                test()
+                command = chall_list[chall_num]["chall_name"]+".start_challenge" + f"([\"python3\",{codeFilename}])"
+                print(f"[+] TRY {command}")
+                ret = eval(command)
+                if ret:
+                    print("성공")
+                else:
+                    print("실패")
             except:
                 print("[+] ERROR")            
 

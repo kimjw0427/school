@@ -18,10 +18,3 @@ def start_challenge(target_file):
         return 1
     else:
         return 0
-    
-
-if start_challenge(["python3","test.py"]):
-    print("성공")
-else:
-    print("실패")
-
