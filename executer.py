@@ -9,5 +9,6 @@ def sendline(p, string_bytes):
     p.stdin.flush()
 
 def readline(p):
+    p.wait(timeout=5)
     rs = p.stdout.readline().decode("utf-8").strip()
     return rs

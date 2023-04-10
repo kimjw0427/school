@@ -1,3 +1,4 @@
-from challengeFolder import *
+from challengeFolder import add
 
-add.test()
+a = 'add.start_challenge(["python3","/mnt/c/Users/Jeju/Desktop/abcd/challengeFolder/test.py"])'
+print(eval(a))

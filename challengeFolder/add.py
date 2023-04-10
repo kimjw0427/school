@@ -9,7 +9,7 @@ def start_challenge(target_file):
         v1 = random.randint(0,10**10); v2 = random.randint(0,10**10)
         sendline(p,f"{v1} {v2}".encode())
         ret = readline(p)
-
+        print(ret)
         if int(ret) == (v1+v2):
             comp = comp + 1
         p.kill()
